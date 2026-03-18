@@ -7,414 +7,7 @@
     <!-- Підключення шрифтів для академічного та сучасного вигляду -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    
-    <!-- <style>
-        /* =========================================
-           CSS РОЗДІЛ (з використанням camelCase класів)
-           ========================================= */
-        
-        :root {
-            --primaryColor: #1a365d; /* Глибокий синій */
-            --accentColor: #d69e2e;  /* Золотий */
-            --textDark: #2d3748;
-            --textLight: #4a5568;
-            --bgLight: #f7fafc;
-            --bgWhite: #ffffff;
-            --fontHeading: 'Lora', serif;
-            --fontBody: 'Open Sans', sans-serif;
-            --transitionSpeed: 0.3s;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--fontBody);
-            color: var(--textDark);
-            line-height: 1.6;
-            background-color: var(--bgLight);
-        }
-
-        /* Навігація */
-        .siteHeader {
-            background-color: var(--bgWhite);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navContainer {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logoText {
-            font-family: var(--fontHeading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primaryColor);
-            text-decoration: none;
-        }
-
-        .navMenu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .navItemLink {
-            text-decoration: none;
-            color: var(--textLight);
-            font-weight: 600;
-            transition: color var(--transitionSpeed);
-        }
-
-        .navItemLink:hover {
-            color: var(--accentColor);
-        }
-
-        /* Загальні стилі секцій */
-        .pageSection {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .sectionTitle {
-            font-family: var(--fontHeading);
-            font-size: 2.5rem;
-            color: var(--primaryColor);
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .sectionTitle::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accentColor);
-            margin: 0.5rem auto 0;
-        }
-
-        /* 1. Представлення (Hero Section) */
-        .introSection {
-            margin-top: 4rem;
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            min-height: 80vh;
-        }
-
-        .introTextContent {
-            flex: 1;
-        }
-
-        .introGreeting {
-            font-size: 1.2rem;
-            color: var(--accentColor);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .introName {
-            font-family: var(--fontHeading);
-            font-size: 3.5rem;
-            color: var(--primaryColor);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .introDescription {
-            font-size: 1.1rem;
-            color: var(--textLight);
-            margin-bottom: 2rem;
-        }
-
-        .primaryButton {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--primaryColor);
-            color: var(--bgWhite);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background-color var(--transitionSpeed);
-        }
-
-        .primaryButton:hover {
-            background-color: #0d213b;
-        }
-
-        .introImageContainer {
-            flex: 1;
-            text-align: right;
-        }
-
-        .introImage {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border: 4px solid var(--bgWhite);
-        }
-
-        /* 2. Коротке резюме (Таймлайн) */
-        .resumeContainer {
-            background-color: var(--bgWhite);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .timelineWrapper {
-            position: relative;
-            border-left: 3px solid var(--accentColor);
-            padding-left: 2rem;
-            margin-left: 1rem;
-        }
-
-        .timelineItem {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timelineItem::before {
-            content: '';
-            position: absolute;
-            left: -2.65rem;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background-color: var(--bgWhite);
-            border: 3px solid var(--primaryColor);
-            border-radius: 50%;
-        }
-
-        .timelineDates {
-            font-weight: 600;
-            color: var(--accentColor);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .timelineRole {
-            font-family: var(--fontHeading);
-            font-size: 1.3rem;
-            color: var(--primaryColor);
-            margin-bottom: 0.5rem;
-        }
-
-        .timelineLocation {
-            font-style: italic;
-            color: var(--textLight);
-            margin-bottom: 1rem;
-        }
-
-        /* 3. Досягнення */
-        .achievementsGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .achievementCard {
-            background-color: var(--bgWhite);
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform var(--transitionSpeed);
-            border-bottom: 4px solid var(--primaryColor);
-        }
-
-        .achievementCard:hover {
-            transform: translateY(-5px);
-        }
-
-        .achievementNumber {
-            font-family: var(--fontHeading);
-            font-size: 3rem;
-            color: var(--accentColor);
-            margin-bottom: 0.5rem;
-        }
-
-        .achievementText {
-            font-weight: 600;
-            color: var(--textDark);
-        }
-
-        /* 4. Інтерактивна Галерея */
-        .galleryGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .galleryItem {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-            aspect-ratio: 4/3;
-        }
-
-        .galleryImage {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .galleryItem:hover .galleryImage {
-            transform: scale(1.1);
-        }
-
-        .galleryOverlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(26, 54, 93, 0.9));
-            padding: 2rem 1rem 1rem;
-            color: var(--bgWhite);
-            transform: translateY(100%);
-            transition: transform var(--transitionSpeed);
-        }
-
-        .galleryItem:hover .galleryOverlay {
-            transform: translateY(0);
-        }
-
-        /* Lightbox Modal */
-        .lightboxModal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightboxContent {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 4px;
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
-        }
-
-        .lightboxCloseBtn {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: var(--bgWhite);
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
-            transition: color var(--transitionSpeed);
-        }
-
-        .lightboxCloseBtn:hover {
-            color: var(--accentColor);
-        }
-
-        /* 5. Контакти */
-        .contactContainer {
-            display: flex;
-            gap: 4rem;
-            background-color: var(--bgWhite);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .contactInfo, .contactFormWrapper {
-            flex: 1;
-        }
-
-        .contactDetail {
-            margin-bottom: 1.5rem;
-        }
-
-        .contactLabel {
-            font-weight: 600;
-            color: var(--primaryColor);
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-
-        .contactFormGroup {
-            margin-bottom: 1.5rem;
-        }
-
-        .formInput, .formTextarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            font-family: var(--fontBody);
-        }
-
-        .formTextarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submitBtn {
-            background-color: var(--primaryColor);
-            color: var(--bgWhite);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            transition: background-color var(--transitionSpeed);
-        }
-
-        .submitBtn:hover {
-            background-color: var(--accentColor);
-        }
-
-        .submitBtn:disabled {
-            background-color: #cbd5e0;
-            cursor: not-allowed;
-        }
-
-        /* Футер */
-        .siteFooter {
-            background-color: var(--primaryColor);
-            color: var(--bgWhite);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        /* Мобільна адаптація */
-        @media (max-width: 768px) {
-            .navMenu { display: none; }
-            .introSection, .contactContainer { flex-direction: column; text-align: center; }
-            .introImageContainer { text-align: center; }
-            .sectionTitle { font-size: 2rem; }
-            .introName { font-size: 2.5rem; }
-            .timelineWrapper { padding-left: 1.5rem; }
-        }
-    </style> -->
 </head>
 <body>
 
@@ -427,6 +20,7 @@
                     <li><a href="#intro" class="navItemLink">Головна</a></li>
                     <li><a href="#resume" class="navItemLink">Резюме</a></li>
                     <li><a href="#achievements" class="navItemLink">Досягнення</a></li>
+                    <li><a href="#publications" class="navItemLink">Публікації</a></li>
                     <li><a href="#gallery" class="navItemLink">Галерея</a></li>
                     <li><a href="#contact" class="navItemLink">Контакти</a></li>
                 </ul>
@@ -457,8 +51,8 @@
                 <div class="timelineWrapper">
                     <article class="timelineItem">
                         <span class="timelineDates">2004 — Теперішній час</span>
-                        <h3 class="timelineRole">Викладач математики</h3>
-                        <p class="timelineLocation">Технічний коледж ТДПУ ім. І. Пулюя, м. Тернопіль</p>
+                        <h3 class="timelineRole">Старший викладач вищої математики</h3>
+                        <p class="timelineLocation">Державний технічний коледж, м. Київ</p>
                         <p>Викладання курсів вищої математики, лінійної алгебри та теорії ймовірностей. Розробка авторських методичних посібників для студентів технічних спеціальностей.</p>
                     </article>
 
@@ -497,61 +91,116 @@
                 </div>
                 <div class="achievementCard">
                     <div class="achievementNumber">12</div>
-                    <div class="achievementText">Посібників</div>
+                    <div class="achievementText">Публікацій</div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Галерея -->
-        <section id="gallery" class="pageSection">
-            <h2 class="sectionTitle">Фотогалерея</h2>
-            <div class="galleryGrid" id="galleryContainer">
-                <figure class="galleryItem">
-                    <img src="https://images.unsplash.com/photo-1632516643720-e7f0d7e6a100?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
-                    <figcaption class="galleryOverlay">
-                        <h3>Відкритий урок</h3>
-                        <p>Тема: Інтеграли, 2022</p>
-                    </figcaption>
-                </figure>
-                <figure class="galleryItem">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
-                    <figcaption class="galleryOverlay">
-                        <h3>Випуск 2021</h3>
-                        <p>Випускники коледжу</p>
-                    </figcaption>
-                </figure>
-                <figure class="galleryItem">
-                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
-                    <figcaption class="galleryOverlay">
-                        <h3>Турнір</h3>
-                        <p>Підготовка до змагань</p>
-                    </figcaption>
-                </figure>
-                <figure class="galleryItem">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
-                    <figcaption class="galleryOverlay">
-                        <h3>Лекція</h3>
-                        <p>Теорія ймовірностей</p>
-                    </figcaption>
-                </figure>
-                                <figure class="galleryItem">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
-                    <figcaption class="galleryOverlay">
-                        <h3>Лекція</h3>
-                        <p>Теорія ймовірностей</p>
-                    </figcaption>
-                </figure>
-                                <figure class="galleryItem">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
-                    <figcaption class="galleryOverlay">
-                        <h3>Лекція</h3>
-                        <p>Теорія ймовірностей</p>
-                    </figcaption>
-                </figure>
+        <!-- 4. Методична скарбничка (Публікації) -->
+        <section id="publications" class="pageSection">
+            <h2 class="sectionTitle">Методична скарбничка</h2>
+            <div class="resourcesGrid">
+                <!-- Картка 1 -->
+                <article class="resourceCard">
+                    <span class="resourceTag">Методична розробка</span>
+                    <h3 class="resourceTitle">Використання хмарних технологій на уроках алгебри</h3>
+                    <p class="resourceDesc">Детальний опис використання GeoGebra та Desmos для візуалізації функцій у 10-11 класах.</p>
+                    <a href="#" class="resourceLink">Читати далі &rarr;</a>
+                </article>
+
+                <!-- Картка 2 -->
+                <article class="resourceCard">
+                    <span class="resourceTag">Конспект уроку</span>
+                    <h3 class="resourceTitle">Тема: Визначений інтеграл та його геометричний зміст</h3>
+                    <p class="resourceDesc">План-конспект відкритого уроку для студентів І курсу коледжу з елементами гри.</p>
+                    <a href="#" class="resourceLink">Завантажити PDF &rarr;</a>
+                </article>
+
+                <!-- Картка 3 -->
+                <article class="resourceCard">
+                    <span class="resourceTag">Рекомендації</span>
+                    <h3 class="resourceTitle">Підготовка до ЗНО: як подолати страх перед геометрією</h3>
+                    <p class="resourceDesc">Поради вчителя та підбірка типових задач з розв'язками для самостійної роботи.</p>
+                    <a href="#" class="resourceLink">Читати статтю &rarr;</a>
+                </article>
+
+                <!-- Картка 4 -->
+                <article class="resourceCard">
+                    <span class="resourceTag">Стаття</span>
+                    <h3 class="resourceTitle">Розвиток критичного мислення через математичні парадокси</h3>
+                    <p class="resourceDesc">Опубліковано у журналі "Математика в школі". Аналіз впливу логічних задач на когнітивні здібності.</p>
+                    <a href="#" class="resourceLink">Читати матеріал &rarr;</a>
+                </article>
+            </div>
+
+            <!-- Додана кнопка для переходу на нову сторінку -->
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="publications.html" class="primaryButton">Перейти до всіх публікацій та матеріалів &rarr;</a>
             </div>
         </section>
 
-        <!-- 5. Контакти -->
+        <!-- 5. Галерея -->
+        <section id="gallery" class="pageSection">
+            <h2 class="sectionTitle">Фотогалерея</h2>
+            <div class="carouselWrapper">
+                <button class="carouselBtn prevBtn" aria-label="Попереднє фото">&#10094;</button>
+                <div class="carouselTrack" id="galleryTrack">
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1632516643720-e7f0d7e6a100?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Відкритий урок</h3>
+                            <p>Тема: Інтеграли, 2022</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Випуск 2021</h3>
+                            <p>Випускники коледжу</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Турнір</h3>
+                            <p>Підготовка до змагань</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Лекція</h3>
+                            <p>Теорія ймовірностей</p>
+                        </figcaption>
+                    </figure>
+                    <!-- Додаткові фотографії для каруселі -->
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Обмін досвідом</h3>
+                            <p>Семінар для вчителів, 2023</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Робота в класі</h3>
+                            <p>Практичне заняття</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="galleryItem">
+                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                        <figcaption class="galleryOverlay">
+                            <h3>Онлайн освіта</h3>
+                            <p>Проведення вебінару</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <button class="carouselBtn nextBtn" aria-label="Наступне фото">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- 6. Контакти -->
         <section id="contact" class="pageSection">
             <h2 class="sectionTitle">Зв'язатися зі мною</h2>
             <div class="contactContainer">
@@ -602,101 +251,9 @@
     </div>
 
     <footer class="siteFooter">
-        <p>&copy; 2026 Ганна Мостова. Всі права захищено.</p>
+        <p>&copy; 2026 mvvWebGroup. Всі права захищено.</p>
     </footer>
-
 <script src="./js/script.js"></script>
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Плавне прокручування
-            const navLinks = document.querySelectorAll('.navItemLink');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if(targetSection) {
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // 2. Галерея
-            const galleryImages = document.querySelectorAll('.galleryImage');
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-
-            galleryImages.forEach(image => {
-                image.addEventListener('click', (e) => {
-                    e.stopPropagation(); 
-                    lightboxImage.src = image.src;
-                    lightboxImage.alt = image.alt;
-                    lightboxModal.style.display = 'flex';
-                });
-            });
-
-            const closeLightbox = () => {
-                lightboxModal.style.display = 'none';
-            };
-
-            lightboxCloseBtn.addEventListener('click', closeLightbox);
-            lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
-
-            // 3. Форма (Виправлена відправка)
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.querySelector('.submitBtn');
-            
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                // Підготовка даних
-                const formData = new FormData(contactForm);
-                const dataObj = Object.fromEntries(formData.entries());
-
-                submitBtn.textContent = 'Надсилання...';
-                submitBtn.disabled = true;
-
-                try {
-                    const response = await fetch('https://formsubmit.co/ajax/mostovyi.zsu@gmail.com', {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify(dataObj)
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok) {
-                        showNotification('Повідомлення успішно надіслано!', '#48bb78');
-                        contactForm.reset();
-                    } else {
-                        throw new Error(result.message || 'Помилка сервера');
-                    }
-                } catch (error) {
-                    console.error('FormSubmit Error:', error);
-                    showNotification('Помилка: ' + error.message, '#f56565');
-                } finally {
-                    submitBtn.textContent = 'Надіслати повідомлення';
-                    submitBtn.disabled = false;
-                }
-            });
-
-            function showNotification(text, bgColor) {
-                const note = document.createElement('div');
-                note.style.cssText = `position:fixed;top:100px;right:20px;background:${bgColor};color:white;padding:15px 25px;border-radius:5px;z-index:3000;box-shadow:0 4px 10px rgba(0,0,0,0.2);`;
-                note.textContent = text;
-                document.body.appendChild(note);
-                setTimeout(() => note.remove(), 4000);
-            }
-        });
-    </script> -->
+    
 </body>
 </html>

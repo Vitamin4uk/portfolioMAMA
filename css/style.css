@@ -1,4 +1,3 @@
-
         /* =========================================
            CSS РОЗДІЛ (з використанням camelCase класів)
            ========================================= */
@@ -243,11 +242,93 @@
             color: var(--textDark);
         }
 
-        /* 4. Інтерактивна Галерея */
-        .galleryGrid {
+        /* 4. Публікації (Методична скарбничка) */
+        .resourcesGrid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .resourceCard {
+            background-color: var(--bgWhite);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accentColor);
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow var(--transitionSpeed);
+        }
+
+        .resourceCard:hover {
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .resourceTag {
+            display: inline-block;
+            background-color: #ebf4ff;
+            color: var(--primaryColor);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .resourceTitle {
+            font-family: var(--fontHeading);
+            font-size: 1.4rem;
+            color: var(--primaryColor);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .resourceDesc {
+            color: var(--textLight);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .resourceLink {
+            color: var(--accentColor);
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap var(--transitionSpeed);
+        }
+
+        .resourceLink:hover {
+            gap: 0.8rem;
+            text-decoration: underline;
+        }
+
+
+        /* 4. Інтерактивна Галерея (Карусель) */
+        .carouselWrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .carouselTrack {
+            display: flex;
             gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+            width: 100%;
+            padding: 10px 0; /* padding для тіні при hover */
+        }
+
+        .carouselTrack::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
         }
 
         .galleryItem {
@@ -256,7 +337,36 @@
             border-radius: 8px;
             cursor: pointer;
             aspect-ratio: 4/3;
+            flex: 0 0 calc(33.333% - 1rem); /* 3 елементи на рядок */
+            scroll-snap-align: start;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
+        .carouselBtn {
+            background-color: var(--primaryColor);
+            color: var(--bgWhite);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            transition: background-color var(--transitionSpeed), transform var(--transitionSpeed);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .carouselBtn:hover {
+            background-color: var(--accentColor);
+            transform: scale(1.1);
+        }
+
+        .prevBtn { left: -15px; }
+        .nextBtn { right: -15px; }
 
         .galleryImage {
             width: 100%;
@@ -396,6 +506,10 @@
         }
 
         /* Мобільна адаптація */
+        @media (max-width: 900px) {
+            .galleryItem { flex: 0 0 calc(50% - 0.75rem); } /* 2 елементи на планшеті */
+        }
+
         @media (max-width: 768px) {
             .navMenu { display: none; }
             .introSection, .contactContainer { flex-direction: column; text-align: center; }
@@ -403,4 +517,7 @@
             .sectionTitle { font-size: 2rem; }
             .introName { font-size: 2.5rem; }
             .timelineWrapper { padding-left: 1.5rem; }
+            .galleryItem { flex: 0 0 100%; } /* 1 елемент на телефоні */
+            .prevBtn { left: -5px; }
+            .nextBtn { right: -5px; }
         }

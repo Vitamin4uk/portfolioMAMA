@@ -1,4 +1,3 @@
-
         document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Плавне прокручування
@@ -38,6 +37,28 @@
 
             lightboxCloseBtn.addEventListener('click', closeLightbox);
             lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
+
+            // 2.1 Логіка Каруселі
+            const track = document.getElementById('galleryTrack');
+            const prevBtn = document.querySelector('.prevBtn');
+            const nextBtn = document.querySelector('.nextBtn');
+
+            if (track && prevBtn && nextBtn) {
+                // Визначаємо на скільки пікселів зсувати галерею (ширина 1 фото + відступ)
+                const scrollAmount = () => {
+                    const item = track.querySelector('.galleryItem');
+                    const gap = parseInt(window.getComputedStyle(track).gap) || 24;
+                    return item.offsetWidth + gap;
+                };
+
+                prevBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+                });
+            }
 
             // 3. Форма (Виправлена відправка)
             const contactForm = document.getElementById('contactForm');
