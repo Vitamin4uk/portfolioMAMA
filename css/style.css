@@ -1,0 +1,406 @@
+
+        /* =========================================
+           CSS РОЗДІЛ (з використанням camelCase класів)
+           ========================================= */
+        
+        :root {
+            --primaryColor: #1a365d; /* Глибокий синій */
+            --accentColor: #d69e2e;  /* Золотий */
+            --textDark: #2d3748;
+            --textLight: #4a5568;
+            --bgLight: #f7fafc;
+            --bgWhite: #ffffff;
+            --fontHeading: 'Lora', serif;
+            --fontBody: 'Open Sans', sans-serif;
+            --transitionSpeed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fontBody);
+            color: var(--textDark);
+            line-height: 1.6;
+            background-color: var(--bgLight);
+        }
+
+        /* Навігація */
+        .siteHeader {
+            background-color: var(--bgWhite);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logoText {
+            font-family: var(--fontHeading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primaryColor);
+            text-decoration: none;
+        }
+
+        .navMenu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .navItemLink {
+            text-decoration: none;
+            color: var(--textLight);
+            font-weight: 600;
+            transition: color var(--transitionSpeed);
+        }
+
+        .navItemLink:hover {
+            color: var(--accentColor);
+        }
+
+        /* Загальні стилі секцій */
+        .pageSection {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sectionTitle {
+            font-family: var(--fontHeading);
+            font-size: 2.5rem;
+            color: var(--primaryColor);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .sectionTitle::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accentColor);
+            margin: 0.5rem auto 0;
+        }
+
+        /* 1. Представлення (Hero Section) */
+        .introSection {
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            min-height: 80vh;
+        }
+
+        .introTextContent {
+            flex: 1;
+        }
+
+        .introGreeting {
+            font-size: 1.2rem;
+            color: var(--accentColor);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .introName {
+            font-family: var(--fontHeading);
+            font-size: 3.5rem;
+            color: var(--primaryColor);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .introDescription {
+            font-size: 1.1rem;
+            color: var(--textLight);
+            margin-bottom: 2rem;
+        }
+
+        .primaryButton {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primaryColor);
+            color: var(--bgWhite);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color var(--transitionSpeed);
+        }
+
+        .primaryButton:hover {
+            background-color: #0d213b;
+        }
+
+        .introImageContainer {
+            flex: 1;
+            text-align: right;
+        }
+
+        .introImage {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 4px solid var(--bgWhite);
+        }
+
+        /* 2. Коротке резюме (Таймлайн) */
+        .resumeContainer {
+            background-color: var(--bgWhite);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .timelineWrapper {
+            position: relative;
+            border-left: 3px solid var(--accentColor);
+            padding-left: 2rem;
+            margin-left: 1rem;
+        }
+
+        .timelineItem {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timelineItem::before {
+            content: '';
+            position: absolute;
+            left: -2.65rem;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--bgWhite);
+            border: 3px solid var(--primaryColor);
+            border-radius: 50%;
+        }
+
+        .timelineDates {
+            font-weight: 600;
+            color: var(--accentColor);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timelineRole {
+            font-family: var(--fontHeading);
+            font-size: 1.3rem;
+            color: var(--primaryColor);
+            margin-bottom: 0.5rem;
+        }
+
+        .timelineLocation {
+            font-style: italic;
+            color: var(--textLight);
+            margin-bottom: 1rem;
+        }
+
+        /* 3. Досягнення */
+        .achievementsGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievementCard {
+            background-color: var(--bgWhite);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform var(--transitionSpeed);
+            border-bottom: 4px solid var(--primaryColor);
+        }
+
+        .achievementCard:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievementNumber {
+            font-family: var(--fontHeading);
+            font-size: 3rem;
+            color: var(--accentColor);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievementText {
+            font-weight: 600;
+            color: var(--textDark);
+        }
+
+        /* 4. Інтерактивна Галерея */
+        .galleryGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .galleryItem {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .galleryImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .galleryItem:hover .galleryImage {
+            transform: scale(1.1);
+        }
+
+        .galleryOverlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(26, 54, 93, 0.9));
+            padding: 2rem 1rem 1rem;
+            color: var(--bgWhite);
+            transform: translateY(100%);
+            transition: transform var(--transitionSpeed);
+        }
+
+        .galleryItem:hover .galleryOverlay {
+            transform: translateY(0);
+        }
+
+        /* Lightbox Modal */
+        .lightboxModal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightboxContent {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .lightboxCloseBtn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: var(--bgWhite);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color var(--transitionSpeed);
+        }
+
+        .lightboxCloseBtn:hover {
+            color: var(--accentColor);
+        }
+
+        /* 5. Контакти */
+        .contactContainer {
+            display: flex;
+            gap: 4rem;
+            background-color: var(--bgWhite);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .contactInfo, .contactFormWrapper {
+            flex: 1;
+        }
+
+        .contactDetail {
+            margin-bottom: 1.5rem;
+        }
+
+        .contactLabel {
+            font-weight: 600;
+            color: var(--primaryColor);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .contactFormGroup {
+            margin-bottom: 1.5rem;
+        }
+
+        .formInput, .formTextarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-family: var(--fontBody);
+        }
+
+        .formTextarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submitBtn {
+            background-color: var(--primaryColor);
+            color: var(--bgWhite);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color var(--transitionSpeed);
+        }
+
+        .submitBtn:hover {
+            background-color: var(--accentColor);
+        }
+
+        .submitBtn:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+        }
+
+        /* Футер */
+        .siteFooter {
+            background-color: var(--primaryColor);
+            color: var(--bgWhite);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Мобільна адаптація */
+        @media (max-width: 768px) {
+            .navMenu { display: none; }
+            .introSection, .contactContainer { flex-direction: column; text-align: center; }
+            .introImageContainer { text-align: center; }
+            .sectionTitle { font-size: 2rem; }
+            .introName { font-size: 2.5rem; }
+            .timelineWrapper { padding-left: 1.5rem; }
+        }

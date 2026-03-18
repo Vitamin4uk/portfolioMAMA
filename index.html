@@ -6,8 +6,9 @@
     <title>Портфоліо | Вчитель математики</title>
     <!-- Підключення шрифтів для академічного та сучасного вигляду -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     
-    <style>
+    <!-- <style>
         /* =========================================
            CSS РОЗДІЛ (з використанням camelCase класів)
            ========================================= */
@@ -413,7 +414,7 @@
             .introName { font-size: 2.5rem; }
             .timelineWrapper { padding-left: 1.5rem; }
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
@@ -445,7 +446,7 @@
                 <a href="#contact" class="primaryButton">Зв'язатися зі мною</a>
             </div>
             <div class="introImageContainer">
-                <img src="/photo_hero.JPG" alt="" class="introImage">
+                <img src="./img/photo_hero.JPG" alt="" class="introImage">
             </div>
         </section>
 
@@ -533,6 +534,20 @@
                         <p>Теорія ймовірностей</p>
                     </figcaption>
                 </figure>
+                                <figure class="galleryItem">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                    <figcaption class="galleryOverlay">
+                        <h3>Лекція</h3>
+                        <p>Теорія ймовірностей</p>
+                    </figcaption>
+                </figure>
+                                <figure class="galleryItem">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="" class="galleryImage">
+                    <figcaption class="galleryOverlay">
+                        <h3>Лекція</h3>
+                        <p>Теорія ймовірностей</p>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
@@ -590,7 +605,9 @@
         <p>&copy; 2026 Ганна Мостова. Всі права захищено.</p>
     </footer>
 
-    <script>
+<script src="./js/script.js"></script>
+
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Плавне прокручування
@@ -680,6 +697,6 @@
                 setTimeout(() => note.remove(), 4000);
             }
         });
-    </script>
+    </script> -->
 </body>
 </html>
