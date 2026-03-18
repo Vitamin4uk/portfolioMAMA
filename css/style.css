@@ -307,7 +307,7 @@
         }
 
 
-        /* 4. Інтерактивна Галерея (Карусель) */
+        /* 5. Інтерактивна Галерея (Карусель) */
         .carouselWrapper {
             position: relative;
             display: flex;
@@ -433,7 +433,7 @@
             color: var(--accentColor);
         }
 
-        /* 5. Контакти */
+        /* 6. Контакти */
         .contactContainer {
             display: flex;
             gap: 4rem;
